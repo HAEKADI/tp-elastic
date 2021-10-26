@@ -1,4 +1,4 @@
-## I**ntroduction**
+## Introduction
 
 The purpose of this interview exercise is to assess your ability to index and query some data in elasticsearch.
 
@@ -6,7 +6,7 @@ Your goal is to ingest a dataset into two elasticsearch indexes then query them 
 
 Elasticsearch instance could be deploy with a docker-compose file in this github repo. There is no need to customize it, thus you will be able to focus on data ingestion and data querying.
 
-The result code should be written on Python language. Upon completion, please upload your code on a public git repository.  
+The result code should be written on Python language (either pure python scripts or jupyter notebook, as you want). Upon completion, please upload your code on a public git repository and add a README that could help us to test your code.  
 
 After the exercise is completed, we will take the time to discuss what has been done. There's not a single way to do things right, and we're aware of that. Please code what you feel would be naturally elegant and simple for you, not what you think we might expect.
 
