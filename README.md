@@ -20,7 +20,7 @@ The exercise is divided between the following steps:
 - Recuperate the dataset in this repo "test_dataset.csv.gz"
     - This dataset is an extraction from the [French Sirene database representing information about french companies](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/). This extraction contains data from two french departments "Creuse (23)" and "Lozere (48)" (about ~40k companies)
 - Find a way to index properly this dataset into Elasticsearch local instance. Data should be ingested into two different indexes (one by departement). Data ingestion could be made by several ways but there is probably ways faster and cleaner than others.
-- Once indexation is done, find a way two query :
+- Once indexation is done, find a way to query :
     - All companies in Department 23 where `denominationUniteLegale` **contains** word : `boulanger`
     - All companies in Department 48 where `activitePrincipaleEtablissement`  **is** `90.01Z`
     - All companies in Department 23 where **is** `23079` **or** `23176`
@@ -38,7 +38,7 @@ Datasets contains different columns which can be difficult to interprete. Here i
 - `enseigne1Etablissement` : Eventual name of the establishment
 - `activitePrincipaleEtablissement`  : Type of company (types meaning could be found here : [https://www.insee.fr/fr/information/2120875](https://www.insee.fr/fr/information/2120875))
 - `geo_adresse` : Adress of the company
-- `geo_score` **:** Confidence score of the adress
-- `categorieJuridiqueUniteLegale` ****: Juridical category of the company
-- `codeCommuneEtablissement` ****: geographical code of the city hosting the company
+- `geo_score` : Confidence score of the adress
+- `categorieJuridiqueUniteLegale` : Juridical category of the company
+- `codeCommuneEtablissement` : geographical code of the city hosting the company
 - `dep` : department of the company
