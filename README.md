@@ -18,8 +18,8 @@ The exercise is divided between the following steps:
 
 - First, deploy Elasticsearch instance with : `docker-compose up -d` . It will deploy your elasticsearch instance available at [localhost:9200](http://localhost:9200) (login : elastic, password: elastic)
 - Recuperate the dataset in this repo "test_dataset.csv.gz"
-    - This dataset is an extraction from the French Sirene database representing information about french companies. This extraction contains data from two french departments "Creuse (23)" and "Lozere (48)" (about ~40k companies)
-- Find a way to index properly this dataset into Elasticsearch (url, login and password of the instance will be provided on demand). Data should be ingested into two different indexes (one by departement). Data ingestion could be made by several ways but there is probably ways faster and cleaner than others.
+    - This dataset is an extraction from the [French Sirene database representing information about french companies](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/). This extraction contains data from two french departments "Creuse (23)" and "Lozere (48)" (about ~40k companies)
+- Find a way to index properly this dataset into Elasticsearch local instance. Data should be ingested into two different indexes (one by departement). Data ingestion could be made by several ways but there is probably ways faster and cleaner than others.
 - Once indexation is done, find a way two query :
     - All companies in Department 23 where `denominationUniteLegale` contains word : `boulanger`
     - All companies in Department 48 where `activitePrincipaleEtablissement`  ****is `90.01Z`
