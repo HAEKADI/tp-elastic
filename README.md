@@ -21,10 +21,10 @@ The exercise is divided between the following steps:
     - This dataset is an extraction from the [French Sirene database representing information about french companies](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/). This extraction contains data from two french departments "Creuse (23)" and "Lozere (48)" (about ~40k companies)
 - Find a way to index properly this dataset into Elasticsearch local instance. Data should be ingested into two different indexes (one by departement). Data ingestion could be made by several ways but there is probably ways faster and cleaner than others.
 - Once indexation is done, find a way two query :
-    - All companies in Department 23 where `denominationUniteLegale` contains word : `boulanger`
-    - All companies in Department 48 where `activitePrincipaleEtablissement`  ****is `90.01Z`
-    - All companies in Department 23 where is `23079` or `23176`
-    - Relevant companies in Departement 48 where terms of query is `Théâtre Mende` (NB : Mende is the city capital of Department 48)
+    - All companies in Department 23 where `denominationUniteLegale` **contains** word : `boulanger`
+    - All companies in Department 48 where `activitePrincipaleEtablissement`  **is** `90.01Z`
+    - All companies in Department 23 where **is** `23079` **or** `23176`
+    - Relevant companies in Departement 48 where terms of query **is** `Théâtre Mende` (NB : Mende is the city capital of Department 48)
     
 
 ## Vocabulary
