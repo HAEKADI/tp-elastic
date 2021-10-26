@@ -16,7 +16,7 @@ If you're stuck on something, please reach out to us.
 
 The exercise is divided between the following steps:
 
-- First, deploy Elasticsearch instance with : `docker-compose up -d` . It will deploy your elasticsearch instance available at [localhost:9200](http://localhost:9200) (login : admin, password: admin)
+- First, deploy Elasticsearch instance with : `docker-compose up -d` . It will deploy your elasticsearch instance available at [localhost:9200](http://localhost:9200) (login : elastic, password: elastic)
 - Recuperate the dataset in this repo "test_dataset.csv.gz"
     - This dataset is an extraction from the French Sirene database representing information about french companies. This extraction contains data from two french departments "Creuse (23)" and "Lozere (48)" (about ~40k companies)
 - Find a way to index properly this dataset into Elasticsearch (url, login and password of the instance will be provided on demand). Data should be ingested into two different indexes (one by departement). Data ingestion could be made by several ways but there is probably ways faster and cleaner than others.
