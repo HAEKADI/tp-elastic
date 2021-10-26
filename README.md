@@ -23,7 +23,7 @@ The exercise is divided between the following steps:
 - Once indexation is done, find a way to query :
     - All companies in Department 23 where `denominationUniteLegale` **contains** word : `boulanger`
     - All companies in Department 48 where `activitePrincipaleEtablissement`  **is** `90.01Z`
-    - All companies in Department 23 where **is** `23079` **or** `23176`
+    - All companies in Department 23 where `codeCommuneEtablissement` **is** `23079` **or** `23176`
     - Relevant companies in Departement 48 where terms of query **is** `Théâtre Mende` (NB : Mende is the city capital of Department 48)
     
 
