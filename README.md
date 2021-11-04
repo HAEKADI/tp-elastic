@@ -1,44 +1,33 @@
-## Introduction
+## Set-up
+Once the Elasticsearch instance is deployed, use a [`jupyter-minimal`](https://hub.docker.com/r/jupyter/minimal-notebook/tags/) docker image to run Jupyter notebook locally. It comes with many packages already installed.
 
-The purpose of this interview exercise is to assess your ability to index and query some data in elasticsearch.
+Start by connecting the current working directory to the Docker container:
+```
+$ docker run -p 8888:8888 -v $(pwd):/home/jovyan/work jupyter/minimal-notebook 
+```
+To install required packages, enter the docker container:
+```
+$ docker exec -it CONTAINER-ID /bin/bash
+```
 
-Your goal is to ingest a dataset into two elasticsearch indexes then query them smartly to find specific documents.
+then use `pip` to install the following libraries :
+```
+elasticsearch==7.15.1
+elasticsearch-dsl==7.4.0
+pandas==1.3.4
+requests==2.26.0
+seaborn==0.11.2
+matplotlib==3.4.3
+ipython-autotime==0.3.1
+```
 
-Elasticsearch instance could be deploy with a docker-compose file in this github repo. There is no need to customize it, thus you will be able to focus on data ingestion and data querying.
+If not, use a simple virtual environement and `pip install` the `requirements.txt`.
 
-The result code should be written on Python language (either pure python scripts or jupyter notebook, as you want). Upon completion, please upload your code on a public git repository and add a README that could help us to test your code.  
+## Answers
 
-After the exercise is completed, we will take the time to discuss what has been done. There's not a single way to do things right, and we're aware of that. Please code what you feel would be naturally elegant and simple for you, not what you think we might expect.
+The `company_search.ipynb` contains the entire exercice and is organised in two main sections:
 
-If you're stuck on something, please reach out to us.
+1. EDA(Exploratory data analysis): where I explore and get to know the data a little.
+2. Elasticsearch: where I connect to the ES server, index and then query the data.
 
-## Exercise
-
-The exercise is divided between the following steps:
-
-- First, deploy Elasticsearch instance with : `docker-compose up -d` . It will deploy your elasticsearch instance available at [localhost:9200](http://localhost:9200) (login : elastic, password: elastic)
-- Recuperate the dataset in this repo "test_dataset.csv.gz"
-    - This dataset is an extraction from the [French Sirene database representing information about french companies](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/). This extraction contains data from two french departments "Creuse (23)" and "Lozere (48)" (about ~40k companies)
-- Find a way to index properly this dataset into Elasticsearch local instance. Data should be ingested into two different indexes (one by departement). Data ingestion could be made by several ways but there is probably ways faster and cleaner than others.
-- Once indexation is done, find a way to query :
-    - All companies in Department 23 where `denominationUniteLegale` **contains** word : `boulanger`
-    - All companies in Department 48 where `activitePrincipaleEtablissement`  **is** `90.01Z`
-    - All companies in Department 23 where `codeCommuneEtablissement` **is** `23079` **or** `23176`
-    - Relevant companies in Departement 48 where terms of query **is** `Théâtre Mende` (NB : Mende is the city capital of Department 48)
-    
-
-## Vocabulary
-
-Datasets contains different columns which can be difficult to interprete. Here is the signification of them :
-
-- `siren` : French id of a french company
-- `siret` : French id of a french establishment (subdivision of a company)
-- `denominationUniteLegale` : Name of the company
-- `sigleUniteLegale` : Eventual short name of a company
-- `enseigne1Etablissement` : Eventual name of the establishment
-- `activitePrincipaleEtablissement`  : Type of company (types meaning could be found here : [https://www.insee.fr/fr/information/2120875](https://www.insee.fr/fr/information/2120875))
-- `geo_adresse` : Adress of the company
-- `geo_score` : Confidence score of the adress
-- `categorieJuridiqueUniteLegale` : Juridical category of the company
-- `codeCommuneEtablissement` : geographical code of the city hosting the company
-- `dep` : department of the company
+The notebook is commented which explain the major implementation choices.
