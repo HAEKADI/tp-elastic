@@ -15,10 +15,9 @@ then use `pip` to install the following packages:
 elasticsearch==7.15.1
 elasticsearch-dsl==7.4.0
 pandas==1.3.4
-requests==2.26.0
-seaborn==0.11.2
-matplotlib==3.4.3
 ipython-autotime==0.3.1
+
+requests==2.26.0 (No need to install it, should come with the container)
 ```
 
 If you do not wish to use a Docker container, use a simple virtual environment instead and `pip install` the packages listed in `requirements.txt`.
