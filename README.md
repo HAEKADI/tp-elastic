@@ -21,13 +21,13 @@ matplotlib==3.4.3
 ipython-autotime==0.3.1
 ```
 
-If you do not wish to use a Docker container, use a simple virtual environement instead and `pip install` the packages in `requirements.txt`.
+If you do not wish to use a Docker container, use a simple virtual environment instead and `pip install` the packages listed in `requirements.txt`.
 
 ## Implementation
 
 The [`company_search.ipynb`](https://github.com/HAEKADI/tp-elastic/blob/master/company_search.ipynb) contains the entire exercice and is organised in two main sections:
 
-1. EDA(Exploratory data analysis): where I explore and get to know the data a little.
-2. Elasticsearch: where I connect to the ES server, index and then query the data.
+1. **EDA(Exploratory data analysis)**: where I explore and get to know the data a little.
+2. **Elasticsearch**: where I connect to the ES server, index and then query the data.
 
 The notebook is detailed and contains comments explaining the major implementation choices.
