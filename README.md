@@ -14,8 +14,9 @@ then use `pip` to install the following packages:
 ```
 elasticsearch==7.15.1
 elasticsearch-dsl==7.4.0
-pandas==1.3.4
 ipython-autotime==0.3.1
+matplotlib==3.4.3
+pandas==1.3.4
 
 requests==2.26.0 (No need to install it, it should come with the container)
 ```
